@@ -1,12 +1,13 @@
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 export default function Graph() {
   return (
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Veri Yapıları › Graf</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Veri Yapıları › Graf</div>
           <h1>🕸️ Graf (Graph)</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             Düğümler (vertex) ve kenarlardan (edge) oluşan, ilişkileri modelleyen veri yapısı.
@@ -130,13 +131,13 @@ Console.WriteLine(network.CountComponents()); // 2 arkadaş grubu`} />
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             Graf veri yapısını öğrendin. Şimdi asıl güç graf <strong>algoritmalarında</strong>:
             BFS, DFS, Dijkstra ve Union-Find için{' '}
-            <a href="/algoritmalar/graf-algoritmalari">Graf Algoritmaları</a> sayfasına geç.
+            <Link to="/algoritmalar/graf-algoritmalari">Graf Algoritmaları</Link> sayfasına geç.
           </p>
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
-          <a href="/veri-yapilari/hash-tablosu" className="btn btn-outline">← Hash Tablosu</a>
-          <a href="/algoritmalar/graf-algoritmalari" className="btn btn-primary">Graf Algoritmaları →</a>
+          <Link to="/veri-yapilari/hash-tablosu" className="btn btn-outline">← Hash Tablosu</Link>
+          <Link to="/algoritmalar/graf-algoritmalari" className="btn btn-primary">Graf Algoritmaları →</Link>
         </div>
       </div>
     </div>

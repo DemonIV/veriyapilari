@@ -2,6 +2,7 @@ import { useState } from 'react';
 import CodeBlock from '../components/CodeBlock';
 import AdBanner from '../components/AdBanner';
 import useStoredSet, { SOLVED_PROBLEMS_KEY } from '../hooks/useStoredSet';
+import { Link } from 'react-router-dom';
 
 const allProblems = [
   {
@@ -247,7 +248,7 @@ export default function Problems() {
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Sorular</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Sorular</div>
           <h1>💡 Alıştırma Soruları</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             Kolay'dan Zor'a kadar C# ile çözümlü sorular. Her soruyu önce kendin çöz,

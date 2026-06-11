@@ -2,6 +2,7 @@ import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
 import SortingVisualizer from '../../components/SortingVisualizer';
+import { Link } from 'react-router-dom';
 
 const sortingAlgos = {
   merge: {
@@ -200,7 +201,7 @@ export default function Sorting() {
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Algoritmalar › Sıralama</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Algoritmalar › Sıralama</div>
           <h1>📊 Sıralama Algoritmaları</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             Bubble Sort'tan Merge Sort'a, Quick Sort'tan Heap Sort'a.
@@ -361,8 +362,8 @@ public static int[] CountingSort(int[] arr, int maxVal)
         <AdBanner size="banner" style={{ margin: '32px 0' }} />
 
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, flexWrap: 'wrap', gap: 16 }}>
-          <a href="/veri-yapilari/hash-tablosu" className="btn btn-outline">← Hash Tablosu</a>
-          <a href="/algoritmalar/arama" className="btn btn-primary">Sonraki: Arama →</a>
+          <Link to="/veri-yapilari/hash-tablosu" className="btn btn-outline">← Hash Tablosu</Link>
+          <Link to="/algoritmalar/arama" className="btn btn-primary">Sonraki: Arama →</Link>
         </div>
       </div>
     </div>

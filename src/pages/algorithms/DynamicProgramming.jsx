@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 const dpProblems = [
   {
@@ -301,7 +302,7 @@ export default function DynamicProgramming() {
       <div className="page-header">
         <div className="container">
           <div className="breadcrumb">
-            <a href="/">Ana Sayfa</a> › <a href="/konular">Algoritmalar</a> › Dinamik Programlama
+            <Link to="/">Ana Sayfa</Link> › <Link to="/konular">Algoritmalar</Link> › Dinamik Programlama
           </div>
           <h1>⚡ Dinamik Programlama</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, fontSize: '1.1rem', maxWidth: 700 }}>

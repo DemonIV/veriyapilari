@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 const problems = [
   {
@@ -134,7 +135,7 @@ export default function Arrays() {
       <div className="page-header">
         <div className="container">
           <div className="breadcrumb">
-            <a href="/">Ana Sayfa</a> › <a href="/#topics">Veri Yapıları</a> › Diziler
+            <Link to="/">Ana Sayfa</Link> › <Link to="/#topics">Veri Yapıları</Link> › Diziler
           </div>
           <h1>📦 Diziler (Arrays)</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, fontSize: '1.05rem', lineHeight: 1.7 }}>
@@ -383,11 +384,11 @@ Console.WriteLine(BinarySearch.Search(sirali, 7)); // 3`} />
         {/* Sonraki Adım */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 40, flexWrap: 'wrap', gap: 16 }}>
           <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-            ← <a href="/">Ana Sayfaya Dön</a>
+            ← <Link to="/">Ana Sayfaya Dön</Link>
           </div>
-          <a href="/veri-yapilari/bagli-liste" className="btn btn-primary">
+          <Link to="/veri-yapilari/bagli-liste" className="btn btn-primary">
             Sonraki: Bağlı Listeler →
-          </a>
+          </Link>
         </div>
       </div>
     </div>

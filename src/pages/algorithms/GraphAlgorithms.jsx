@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 export default function GraphAlgorithms() {
   const [activeAlgo, setActiveAlgo] = useState('bfs');
@@ -315,7 +316,7 @@ public class Kruskal
       <div className="page-header">
         <div className="container">
           <div className="breadcrumb">
-            <a href="/">Ana Sayfa</a> › <a href="/konular">Algoritmalar</a> › Graf Algoritmaları
+            <Link to="/">Ana Sayfa</Link> › <Link to="/konular">Algoritmalar</Link> › Graf Algoritmaları
           </div>
           <h1>🕸️ Graf Algoritmaları</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700 }}>

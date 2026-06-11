@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 export default function Queue() {
   const [open, setOpen] = useState(null);
@@ -97,7 +98,7 @@ public int[] MaxSlidingWindow(int[] nums, int k)
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Veri Yapıları › Kuyruk</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Veri Yapıları › Kuyruk</div>
           <h1>🚶 Kuyruk (Queue)</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             FIFO (First In, First Out) prensibiyle çalışan veri yapısı.
@@ -232,8 +233,8 @@ public class CircularQueue<T>
         <AdBanner size="banner" style={{ margin: '32px 0' }} />
 
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, flexWrap: 'wrap', gap: 16 }}>
-          <a href="/veri-yapilari/yigin" className="btn btn-outline">← Yığın</a>
-          <a href="/veri-yapilari/agac" className="btn btn-primary">Sonraki: Ağaç →</a>
+          <Link to="/veri-yapilari/yigin" className="btn btn-outline">← Yığın</Link>
+          <Link to="/veri-yapilari/agac" className="btn btn-primary">Sonraki: Ağaç →</Link>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 export default function LinkedList() {
   const [open, setOpen] = useState(null);
@@ -99,7 +100,7 @@ public ListNode MiddleNode(ListNode head)
       <div className="page-header">
         <div className="container">
           <div className="breadcrumb">
-            <a href="/">Ana Sayfa</a> › Veri Yapıları › Bağlı Liste
+            <Link to="/">Ana Sayfa</Link> › Veri Yapıları › Bağlı Liste
           </div>
           <h1>🔗 Bağlı Listeler (Linked Lists)</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
@@ -297,8 +298,8 @@ liste.AddLast(30);
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 40, flexWrap: 'wrap', gap: 16 }}>
-          <a href="/veri-yapilari/diziler" className="btn btn-outline">← Diziler</a>
-          <a href="/veri-yapilari/yigin" className="btn btn-primary">Sonraki: Yığın →</a>
+          <Link to="/veri-yapilari/diziler" className="btn btn-outline">← Diziler</Link>
+          <Link to="/veri-yapilari/yigin" className="btn btn-primary">Sonraki: Yığın →</Link>
         </div>
       </div>
     </div>

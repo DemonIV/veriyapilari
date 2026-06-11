@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../components/CodeBlock';
 import AdBanner from '../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 const basicProjects = [
   {
@@ -457,7 +458,7 @@ export default function Projects() {
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Projeler</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Projeler</div>
           <h1>🛠️ Uygulamalı Projeler</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             Temel veri yapılarını kullanarak gerçek projeler inşa et.

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 export default function Tree() {
   const [open, setOpen] = useState(null);
@@ -252,7 +253,7 @@ private int MaxGain(TreeNode node)
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Veri Yapıları › Ağaç</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Veri Yapıları › Ağaç</div>
           <h1>🌳 Ağaç (Tree)</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             Hiyerarşik veri yapısı. BST, AVL, Red-Black Tree. Veritabanı indeksleri,
@@ -349,8 +350,8 @@ private int MaxGain(TreeNode node)
         <AdBanner size="banner" style={{ margin: '32px 0' }} />
 
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, flexWrap: 'wrap', gap: 16 }}>
-          <a href="/veri-yapilari/kuyruk" className="btn btn-outline">← Kuyruk</a>
-          <a href="/veri-yapilari/hash-tablosu" className="btn btn-primary">Sonraki: Hash Tablosu →</a>
+          <Link to="/veri-yapilari/kuyruk" className="btn btn-outline">← Kuyruk</Link>
+          <Link to="/veri-yapilari/hash-tablosu" className="btn btn-primary">Sonraki: Hash Tablosu →</Link>
         </div>
       </div>
     </div>

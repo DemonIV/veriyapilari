@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 const problems = [
   {
@@ -108,7 +109,7 @@ export default function Stack() {
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Veri Yapıları › Yığın</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Veri Yapıları › Yığın</div>
           <h1>📚 Yığın (Stack)</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             LIFO (Last In, First Out) prensibiyle çalışan temel veri yapısı.
@@ -281,8 +282,8 @@ Console.WriteLine(s.Peek()); // B`} />
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 40, flexWrap: 'wrap', gap: 16 }}>
-          <a href="/veri-yapilari/bagli-liste" className="btn btn-outline">← Bağlı Liste</a>
-          <a href="/veri-yapilari/kuyruk" className="btn btn-primary">Sonraki: Kuyruk →</a>
+          <Link to="/veri-yapilari/bagli-liste" className="btn btn-outline">← Bağlı Liste</Link>
+          <Link to="/veri-yapilari/kuyruk" className="btn btn-primary">Sonraki: Kuyruk →</Link>
         </div>
       </div>
     </div>

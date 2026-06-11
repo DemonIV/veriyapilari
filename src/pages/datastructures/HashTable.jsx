@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import { Link } from 'react-router-dom';
 
 export default function HashTable() {
   const [open, setOpen] = useState(null);
@@ -94,7 +95,7 @@ export default function HashTable() {
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Veri Yapıları › Hash Tablosu</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Veri Yapıları › Hash Tablosu</div>
           <h1>🗂️ Hash Tablosu (Hash Table)</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             Ortalama O(1) arama, ekleme ve silme işlemi sunan güçlü veri yapısı.
@@ -245,8 +246,8 @@ sorted["apple"] = 5;
         <AdBanner size="banner" style={{ margin: '32px 0' }} />
 
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, flexWrap: 'wrap', gap: 16 }}>
-          <a href="/veri-yapilari/agac" className="btn btn-outline">← Ağaç</a>
-          <a href="/algoritmalar/siralama" className="btn btn-primary">Sonraki: Sıralama →</a>
+          <Link to="/veri-yapilari/agac" className="btn btn-outline">← Ağaç</Link>
+          <Link to="/algoritmalar/siralama" className="btn btn-primary">Sonraki: Sıralama →</Link>
         </div>
       </div>
     </div>

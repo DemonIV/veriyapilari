@@ -2,6 +2,7 @@ import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
 import BinarySearchVisualizer from '../../components/BinarySearchVisualizer';
+import { Link } from 'react-router-dom';
 
 export default function Searching() {
   const [open, setOpen] = useState(null);
@@ -94,7 +95,7 @@ public double FindMedianSortedArrays(int[] nums1, int[] nums2)
     <div>
       <div className="page-header">
         <div className="container">
-          <div className="breadcrumb"><a href="/">Ana Sayfa</a> › Algoritmalar › Arama</div>
+          <div className="breadcrumb"><Link to="/">Ana Sayfa</Link> › Algoritmalar › Arama</div>
           <h1>🔍 Arama Algoritmaları</h1>
           <p style={{ color: 'var(--text-muted)', marginTop: 12, maxWidth: 700, lineHeight: 1.7 }}>
             Linear Search'ten Binary Search'e. Binary Search'i derinlemesine anla —
@@ -240,8 +241,8 @@ int idx = Array.BinarySearch(sorted, 7);  // Sadece sıralıda!
         <AdBanner size="banner" style={{ margin: '32px 0' }} />
 
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, flexWrap: 'wrap', gap: 16 }}>
-          <a href="/algoritmalar/siralama" className="btn btn-outline">← Sıralama</a>
-          <a href="/algoritmalar/dinamik-programlama" className="btn btn-primary">Sonraki: Dinamik Programlama →</a>
+          <Link to="/algoritmalar/siralama" className="btn btn-outline">← Sıralama</Link>
+          <Link to="/algoritmalar/dinamik-programlama" className="btn btn-primary">Sonraki: Dinamik Programlama →</Link>
         </div>
       </div>
     </div>
