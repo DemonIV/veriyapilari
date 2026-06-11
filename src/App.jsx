@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import AppLayout from './components/AppLayout';
 import ScrollToTop from './components/ScrollToTop';
+import Seo from './components/Seo';
 import Home from './pages/Home';
 import './index.css';
 
@@ -46,6 +47,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Seo />
       <AppLayout>
         <Suspense fallback={<PageLoader />}>
           <Routes>

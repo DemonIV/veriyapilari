@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://algotr.dev/</loc><priority>1.0</priority></url>
+  <url><loc>https://algotr.dev/veri-yapilari/diziler</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/veri-yapilari/bagli-liste</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/veri-yapilari/yigin</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/veri-yapilari/kuyruk</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/veri-yapilari/agac</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/veri-yapilari/hash-tablosu</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/veri-yapilari/graf</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/veri-yapilari/heap</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/algoritmalar/siralama</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/algoritmalar/arama</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/algoritmalar/dinamik-programlama</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/algoritmalar/graf-algoritmalari</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/algoritmalar/acgozlu</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/algoritmalar/bolum-fethet</loc><priority>0.8</priority></url>
+  <url><loc>https://algotr.dev/sorular</loc><priority>0.9</priority></url>
+  <url><loc>https://algotr.dev/projeler</loc><priority>0.7</priority></url>
+</urlset>
