@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import BinarySearchVisualizer from '../../components/BinarySearchVisualizer';
 
 export default function Searching() {
   const [open, setOpen] = useState(null);
@@ -108,6 +109,13 @@ public double FindMedianSortedArrays(int[] nums1, int[] nums2)
 
       <div className="container section">
         <AdBanner size="banner" />
+
+        <h2 style={{ marginBottom: 8 }}>🎬 Binary Search'ü Adım Adım İzle</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: 4 }}>
+          Hedefi seç, "İleri" ile ilerle: <span style={{ color: 'var(--yellow)' }}>sarı</span> kutu mid,
+          soluk kutular elenen yarılar. Her adımda arama alanı yarıya iner.
+        </p>
+        <BinarySearchVisualizer />
 
         <h2 style={{ marginBottom: 20 }}>🔍 Arama Algoritmaları Karşılaştırması</h2>
         <table style={{ marginBottom: 40 }}>

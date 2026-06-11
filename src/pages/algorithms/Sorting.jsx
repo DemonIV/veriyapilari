@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import SortingVisualizer from '../../components/SortingVisualizer';
 
 const sortingAlgos = {
   merge: {
@@ -214,6 +215,14 @@ export default function Sorting() {
 
       <div className="container section">
         <AdBanner size="banner" />
+
+        <h2 style={{ marginBottom: 8 }}>🎬 İnteraktif Görselleştirme</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: 4 }}>
+          Algoritmayı seç, başlat ve adım adım izle: <span style={{ color: 'var(--yellow)' }}>sarı</span> karşılaştırma,{' '}
+          <span style={{ color: 'var(--red)' }}>kırmızı</span> takas,{' '}
+          <span style={{ color: 'var(--secondary)' }}>yeşil</span> yerine oturmuş eleman demek.
+        </p>
+        <SortingVisualizer />
 
         {/* Karşılaştırma Tablosu */}
         <h2 style={{ marginBottom: 20 }}>📊 Algoritma Karşılaştırması</h2>
