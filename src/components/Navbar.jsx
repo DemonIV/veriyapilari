@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import SearchPalette from './SearchPalette';
 
 const dataStructures = [
   { path: '/veri-yapilari/diziler', label: '📦 Diziler (Arrays)' },
@@ -24,7 +25,19 @@ const algorithms = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setSearchOpen(open => !open);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   return (
     <nav style={{
@@ -131,6 +144,10 @@ export default function Navbar() {
 
         {/* CTA */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <button className="search-trigger" onClick={() => setSearchOpen(true)} aria-label="Site içinde ara">
+            🔍 <span className="search-trigger-label">Ara</span>
+            <kbd className="search-kbd">Ctrl K</kbd>
+          </button>
           <a href="https://dotnetfiddle.net" target="_blank" rel="noopener noreferrer"
             style={{
               padding: '8px 16px', borderRadius: 8, fontSize: '0.85rem', fontWeight: 600,
@@ -169,10 +186,13 @@ export default function Navbar() {
         </div>
       )}
 
+      {searchOpen && <SearchPalette onClose={() => setSearchOpen(false)} />}
+
       <style>{`
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .hamburger { display: block !important; }
+          .search-trigger .search-kbd, .search-trigger .search-trigger-label { display: none; }
         }
       `}</style>
     </nav>
