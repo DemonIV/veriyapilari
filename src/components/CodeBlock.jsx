@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import csharp from 'react-syntax-highlighter/dist/esm/languages/prism/csharp';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+SyntaxHighlighter.registerLanguage('csharp', csharp);
 
 export default function CodeBlock({ code, language = 'csharp', filename = 'Program.cs', showLineNumbers = true }) {
   const [copied, setCopied] = useState(false);

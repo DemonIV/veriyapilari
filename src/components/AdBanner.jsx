@@ -15,9 +15,11 @@ export default function AdBanner({ size = 'banner', style = {} }) {
     if (!isDev) {
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch {}
+      } catch {
+        // AdSense script yüklenmediyse sessizce geç
+      }
     }
-  }, []);
+  }, [isDev]);
 
   if (isDev) {
     return (
