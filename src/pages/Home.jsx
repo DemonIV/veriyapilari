@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import AdBanner from '../components/AdBanner';
+import useStoredSet, { COMPLETED_TOPICS_KEY, SOLVED_PROBLEMS_KEY } from '../hooks/useStoredSet';
 
 const topicCards = [
   { icon: '📦', title: 'Diziler', desc: 'Temel veri yapısı, index ile O(1) erişim', path: '/veri-yapilari/diziler', type: 'ds', level: 'Başlangıç' },
@@ -14,6 +15,8 @@ const topicCards = [
   { icon: '🔍', title: 'Arama', desc: 'Linear, Binary, Interpolation', path: '/algoritmalar/arama', type: 'algo', level: 'Başlangıç' },
   { icon: '⚡', title: 'Dinamik Programlama', desc: 'Memoization, optimal alt yapı', path: '/algoritmalar/dinamik-programlama', type: 'algo', level: 'İleri' },
   { icon: '🕸️', title: 'Graf Algoritmaları', desc: 'BFS, DFS, Dijkstra, Union-Find', path: '/algoritmalar/graf-algoritmalari', type: 'algo', level: 'İleri' },
+  { icon: '💰', title: 'Açgözlü Algoritmalar', desc: 'Greedy seçim, aktivite seçimi', path: '/algoritmalar/acgozlu', type: 'algo', level: 'Orta' },
+  { icon: '⚔️', title: 'Böl ve Fethet', desc: 'Master theorem, hızlı üs alma', path: '/algoritmalar/bolum-fethet', type: 'algo', level: 'Orta' },
 ];
 
 const learningPath = [
@@ -23,7 +26,60 @@ const learningPath = [
   { step: 4, title: 'Uzman', items: ['Segment Tree', 'Trie', 'Maxflow', 'Bitmask DP'], color: 'var(--orange)' },
 ];
 
+function ProgressSection() {
+  const [completed] = useStoredSet(COMPLETED_TOPICS_KEY);
+  const [solved] = useStoredSet(SOLVED_PROBLEMS_KEY);
+  const total = topicCards.length;
+  const done = topicCards.filter(t => completed.has(t.path)).length;
+  const percent = Math.round((done / total) * 100);
+
+  return (
+    <section className="card" style={{ marginTop: 40, padding: '24px 28px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, marginBottom: 14 }}>
+        <h3 style={{ fontSize: '1.05rem' }}>📈 İlerlemen</h3>
+        <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+          <strong style={{ color: 'var(--secondary)' }}>{done}/{total}</strong> konu tamamlandı ·{' '}
+          <strong style={{ color: 'var(--secondary)' }}>{solved.size}</strong> soru çözüldü
+        </span>
+      </div>
+      <div className="progress-track">
+        <div className="progress-fill" style={{ width: `${percent}%` }} />
+      </div>
+      <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', marginTop: 10 }}>
+        {done === 0
+          ? 'Henüz başlamadın — bir konuyu bitirince sayfanın sağ altındaki "Konuyu tamamladım" butonuyla işaretle.'
+          : done === total
+            ? 'Tüm konuları bitirdin! 🎉 Şimdi soru bankasında ustalaş.'
+            : `Harika gidiyorsun! %${percent} tamamlandı, kaldığın yerden devam et.`}
+      </p>
+    </section>
+  );
+}
+
+function TopicCard({ topic, completed }) {
+  return (
+    <Link to={topic.path} style={{ textDecoration: 'none' }}>
+      <div className="card" style={{ height: '100%', position: 'relative' }}>
+        {completed && (
+          <span title="Tamamlandı" style={{
+            position: 'absolute', top: 12, right: 12, width: 22, height: 22, borderRadius: '50%',
+            background: 'var(--secondary)', color: '#06281f', fontSize: '0.72rem', fontWeight: 800,
+            display: 'flex', alignItems: 'center', justifyContent: 'center'
+          }}>✓</span>
+        )}
+        <div style={{ fontSize: '1.8rem', marginBottom: 10 }}>{topic.icon}</div>
+        <h3 style={{ fontSize: '1rem', marginBottom: 6 }}>{topic.title}</h3>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', marginBottom: 12, lineHeight: 1.5 }}>{topic.desc}</p>
+        <span className={`badge ${topic.level === 'Başlangıç' ? 'badge-easy' : topic.level === 'Orta' ? 'badge-medium' : 'badge-hard'}`}>
+          {topic.level}
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 export default function Home() {
+  const [completed] = useStoredSet(COMPLETED_TOPICS_KEY);
   return (
     <div>
       {/* Hero Section */}
@@ -85,6 +141,7 @@ export default function Home() {
       </section>
 
       <div className="container">
+        <ProgressSection />
         <AdBanner size="banner" style={{ marginTop: 40 }} />
 
         {/* Topics */}
@@ -100,16 +157,7 @@ export default function Home() {
             </h3>
             <div className="grid-4">
               {topicCards.filter(t => t.type === 'ds').map(topic => (
-                <Link key={topic.path} to={topic.path} style={{ textDecoration: 'none' }}>
-                  <div className="card" style={{ height: '100%' }}>
-                    <div style={{ fontSize: '1.8rem', marginBottom: 10 }}>{topic.icon}</div>
-                    <h3 style={{ fontSize: '1rem', marginBottom: 6 }}>{topic.title}</h3>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', marginBottom: 12, lineHeight: 1.5 }}>{topic.desc}</p>
-                    <span className={`badge ${topic.level === 'Başlangıç' ? 'badge-easy' : topic.level === 'Orta' ? 'badge-medium' : 'badge-hard'}`}>
-                      {topic.level}
-                    </span>
-                  </div>
-                </Link>
+                <TopicCard key={topic.path} topic={topic} completed={completed.has(topic.path)} />
               ))}
             </div>
           </div>
@@ -120,16 +168,7 @@ export default function Home() {
             </h3>
             <div className="grid-4">
               {topicCards.filter(t => t.type === 'algo').map(topic => (
-                <Link key={topic.path} to={topic.path} style={{ textDecoration: 'none' }}>
-                  <div className="card" style={{ height: '100%' }}>
-                    <div style={{ fontSize: '1.8rem', marginBottom: 10 }}>{topic.icon}</div>
-                    <h3 style={{ fontSize: '1rem', marginBottom: 6 }}>{topic.title}</h3>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', marginBottom: 12, lineHeight: 1.5 }}>{topic.desc}</p>
-                    <span className={`badge ${topic.level === 'Başlangıç' ? 'badge-easy' : topic.level === 'Orta' ? 'badge-medium' : 'badge-hard'}`}>
-                      {topic.level}
-                    </span>
-                  </div>
-                </Link>
+                <TopicCard key={topic.path} topic={topic} completed={completed.has(topic.path)} />
               ))}
             </div>
           </div>

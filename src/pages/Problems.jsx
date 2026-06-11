@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../components/CodeBlock';
 import AdBanner from '../components/AdBanner';
+import useStoredSet, { SOLVED_PROBLEMS_KEY } from '../hooks/useStoredSet';
 
 const allProblems = [
   {
@@ -234,6 +235,7 @@ export default function Problems() {
   const [open, setOpen] = useState(null);
   const [filterDiff, setFilterDiff] = useState('Tümü');
   const [filterTopic, setFilterTopic] = useState('Tümü');
+  const [solved, toggleSolved] = useStoredSet(SOLVED_PROBLEMS_KEY);
 
   const filtered = allProblems.filter(p => {
     const diffOk = filterDiff === 'Tümü' || difficultyMap[p.difficulty] === filterDiff;
@@ -264,6 +266,7 @@ export default function Problems() {
             { label: 'Kolay', count: allProblems.filter(p => p.difficulty === 'easy').length, color: 'var(--green)' },
             { label: 'Orta', count: allProblems.filter(p => p.difficulty === 'medium').length, color: 'var(--yellow)' },
             { label: 'Zor', count: allProblems.filter(p => p.difficulty === 'hard').length, color: 'var(--red)' },
+            { label: 'Çözüldü', count: solved.size, color: 'var(--secondary)' },
           ].map(s => (
             <div key={s.label} style={{
               background: 'var(--bg-card)', border: `1px solid ${s.color}44`,
@@ -306,8 +309,18 @@ export default function Problems() {
               <div className="accordion">
                 <div className="accordion-header" onClick={() => setOpen(open === p.id ? null : p.id)}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+                    <button
+                      onClick={e => { e.stopPropagation(); toggleSolved(p.id); }}
+                      title={solved.has(p.id) ? 'Çözüldü işaretini kaldır' : 'Çözdüm olarak işaretle'}
+                      style={{
+                        width: 22, height: 22, borderRadius: '50%', cursor: 'pointer', flexShrink: 0,
+                        border: `2px solid ${solved.has(p.id) ? 'var(--secondary)' : 'var(--border)'}`,
+                        background: solved.has(p.id) ? 'var(--secondary)' : 'transparent',
+                        color: '#06281f', fontSize: '0.7rem', fontWeight: 800, lineHeight: 1
+                      }}
+                    >{solved.has(p.id) ? '✓' : ''}</button>
                     <span style={{ color: 'var(--text-dim)', fontWeight: 700, minWidth: 28 }}>#{p.id}</span>
-                    <span style={{ fontWeight: 600 }}>{p.title}</span>
+                    <span style={{ fontWeight: 600, color: solved.has(p.id) ? 'var(--secondary)' : 'inherit' }}>{p.title}</span>
                     <span className={`badge badge-${p.difficulty}`}>{difficultyMap[p.difficulty]}</span>
                     <span style={{
                       background: 'rgba(108,99,255,0.1)', color: 'var(--primary)',
