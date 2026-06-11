@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import AdBanner from '../../components/AdBanner';
+import GraphTraversalVisualizer from '../../components/GraphTraversalVisualizer';
 import { Link } from 'react-router-dom';
 
 export default function GraphAlgorithms() {
@@ -328,6 +329,16 @@ public class Kruskal
 
       <div className="container section">
         <AdBanner size="banner" />
+
+        <h2 style={{ marginBottom: 8 }}>🎬 BFS ve DFS'i Adım Adım İzle</h2>
+        <p style={{ color: 'var(--text-muted)', marginBottom: 4 }}>
+          Algoritmayı ve başlangıç düğümünü seç, "İleri" ile ilerle:{' '}
+          <span style={{ color: 'var(--yellow)' }}>sarı</span> o an işlenen düğüm,{' '}
+          <span style={{ color: 'var(--primary)' }}>mor</span> sırada bekleyenler,{' '}
+          <span style={{ color: 'var(--secondary)' }}>yeşil</span> ziyaret edilenler.
+          BFS'in halka halka, DFS'in dal dal ilerleyişini karşılaştır.
+        </p>
+        <GraphTraversalVisualizer />
 
         {/* Graf Türleri */}
         <h2 style={{ marginBottom: 20 }}>📊 Graf Türleri</h2>

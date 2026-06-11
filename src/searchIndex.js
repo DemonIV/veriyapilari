@@ -11,7 +11,7 @@ export const SEARCH_INDEX = [
   { path: '/algoritmalar/siralama', title: 'Sıralama Algoritmaları', category: 'Algoritma', keywords: 'sort sorting bubble merge quick heap insertion selection stable görselleştirme visualizer' },
   { path: '/algoritmalar/arama', title: 'Arama Algoritmaları', category: 'Algoritma', keywords: 'search binary search ikili arama linear lower upper bound rotated karekök sqrt' },
   { path: '/algoritmalar/dinamik-programlama', title: 'Dinamik Programlama (DP)', category: 'Algoritma', keywords: 'dynamic programming dp memoization tabulation knapsack sırt çantası lcs lis coin change fibonacci' },
-  { path: '/algoritmalar/graf-algoritmalari', title: 'Graf Algoritmaları', category: 'Algoritma', keywords: 'bfs dfs dijkstra en kısa yol shortest path union find kruskal mst topological' },
+  { path: '/algoritmalar/graf-algoritmalari', title: 'Graf Algoritmaları', category: 'Algoritma', keywords: 'bfs dfs dijkstra en kısa yol shortest path union find kruskal mst topological görselleştirme visualizer' },
   { path: '/algoritmalar/acgozlu', title: 'Açgözlü Algoritmalar (Greedy)', category: 'Algoritma', keywords: 'greedy açgözlü aktivite seçimi activity selection jump game huffman aralık interval' },
   { path: '/algoritmalar/bolum-fethet', title: 'Böl ve Fethet (Divide & Conquer)', category: 'Algoritma', keywords: 'divide conquer master theorem fast power hızlı üs inversion merge' },
   { path: '/sorular', title: 'Çözümlü Sorular', category: 'Pratik', keywords: 'problem soru çözüm mülakat interview leetcode kolay orta zor two sum kadane' },

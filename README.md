@@ -18,12 +18,13 @@ Türkiye'nin en kapsamlı **Türkçe** C# veri yapıları ve algoritmalar eğiti
 - 📊 Sıralama — Bubble/Merge/Quick/Heap + **interaktif görselleştirme**
 - 🔍 Arama — Binary search tüm varyantları + **adım adım görselleştirme**
 - ⚡ Dinamik Programlama — Knapsack, LCS, Coin Change, LIS
-- 🕸️ Graf Algoritmaları — BFS, DFS, Dijkstra, Union-Find, Kruskal
+- 🕸️ Graf Algoritmaları — BFS, DFS, Dijkstra, Union-Find + **BFS/DFS görselleştirme**
 - 💰 Açgözlü Algoritmalar — aktivite seçimi, Jump Game, Huffman
 - ⚔️ Böl ve Fethet — fast power, inversiyon sayma, Master Theorem
 
 ### Özellikler
-- 🎬 İnteraktif sıralama ve binary search görselleştiricileri
+- 🎬 İnteraktif görselleştiriciler: sıralama, binary search ve BFS/DFS
+- 🗃️ Soru bankası tek veri dosyasında (`src/data/problems.js`) — yeni soru eklemek kolay
 - 🔍 Site içi arama (Ctrl/Cmd+K) — Türkçe karakter duyarsız
 - 📈 İlerleme takibi — konu tamamlama ve çözülen soru işaretleme (localStorage)
 - 💡 Çözümlü sorular (Kolay/Orta/Zor filtreli)
